@@ -86,7 +86,7 @@ uploadArchives {
        }
     }
 }
-jacoco {
+/*jacoco {
     toolVersion = "0.7.5+"
 }
 
@@ -96,7 +96,7 @@ jacocoTestReport {
              xml.enabled = true
              csv.enabled = true
        }
-}
+}*/
 sonarqube {
     properties {
         property "sonar.projectKey", "SpringBootRestApiExample"
