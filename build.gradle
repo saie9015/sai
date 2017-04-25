@@ -7,6 +7,7 @@ buildscript {
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.5.RELEASE")
         classpath( "io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE")
+	classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.2.1"
         
     }
 }
@@ -16,6 +17,7 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
 //apply plugin: 'io.spring.dependency-management'
+apply plugin: "org.sonarqube"
 apply plugin: 'base'
 apply plugin: 'application'
 
@@ -84,3 +86,26 @@ uploadArchives {
        }
     }
 }
+/*sonarqube {
+    properties {
+        property "sonar.projectKey", "ProductInformationManager"
+              property "sonar.projectName", "ProductInformationManager"
+              property "sonar.projectVersion", "0.1.0"
+              property "sonar.projectDescription", "Any description"
+              property "sonar.scm.disabled", "true"
+              property "sonar.exclusions", "src/main/java/com/aflac/producthub/db/*.java"
+              property "sonar.sources", "src/main/java"
+              property "sonar.test", "src/test/java"
+              property "sonar.forceAnalysis", "true"
+              property "sonar.host", "url=http://dcndkru21:9000"
+              property "sonar.login", "admin"
+              property "sonar.password", "admin"
+              property "sonar.host.connectTimeoutMs", "600000"
+              property "sonar.host.readTimeoutMs", "3600000"
+              property "sonar.dynamicAnalysis", "reuseReports"
+              property "sonar.java.coveragePlugin", "jacoco"
+              property "sonar.junit.reportsPath", "build/test-results"
+              property "sonar.jacoco.reportsPath", "build/reports/jacoco/test/html"
+              //property "sonar.jacoco.reportsPath", "build/jacoco/test.exec"
+    }
+}*/
