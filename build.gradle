@@ -86,18 +86,29 @@ uploadArchives {
        }
     }
 }
-/*sonarqube {
+jacoco {
+    toolVersion = "0.7.5+"
+}
+
+jacocoTestReport {
+       reports {
+             html.enabled = true
+             xml.enabled = true
+             csv.enabled = true
+       }
+}
+sonarqube {
     properties {
-        property "sonar.projectKey", "ProductInformationManager"
-              property "sonar.projectName", "ProductInformationManager"
+        property "sonar.projectKey", "SpringBootRestApiExample"
+              property "sonar.projectName", "SpringBootRestApiExample"
               property "sonar.projectVersion", "0.1.0"
               property "sonar.projectDescription", "Any description"
               property "sonar.scm.disabled", "true"
-              property "sonar.exclusions", "src/main/java/com/aflac/producthub/db/*.java"
+              property "sonar.exclusions", "src/main/java/com.websystique.springboot*.java"
               property "sonar.sources", "src/main/java"
               property "sonar.test", "src/test/java"
               property "sonar.forceAnalysis", "true"
-              property "sonar.host", "url=http://dcndkru21:9000"
+              property "sonar.host", "url=http:35.184.48.120:9000"
               property "sonar.login", "admin"
               property "sonar.password", "admin"
               property "sonar.host.connectTimeoutMs", "600000"
@@ -108,4 +119,15 @@ uploadArchives {
               property "sonar.jacoco.reportsPath", "build/reports/jacoco/test/html"
               //property "sonar.jacoco.reportsPath", "build/jacoco/test.exec"
     }
-}*/
+}
+
+
+configurations {
+   all*.exclude group: 'javax.jms', module: 'jms'
+   all*.exclude group: 'com.sun.jdmk', module: 'jmxtools'
+   all*.exclude group: 'com.sun.jmx', module: 'jmxri'
+   published
+}
+
+
+
