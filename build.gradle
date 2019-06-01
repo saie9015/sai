@@ -17,7 +17,7 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
 //apply plugin: 'io.spring.dependency-management'
-apply plugin: "org.sonarqube"
+//apply plugin: "org.sonarqube"
 apply plugin: 'base'
 apply plugin: 'application'
 
@@ -25,7 +25,7 @@ jar {
 
     archiveName = "SpringBootRestApiExample.jar"
 
-    from {
+   /* from {
 
         configurations.runtime.collect {
             it.isDirectory() ? it : zipTree(it)
@@ -34,7 +34,7 @@ jar {
         configurations.compile.collect {
             it.isDirectory() ? it : zipTree(it)
         }
-    }
+    }*/
 
     manifest {
         attributes 'Main-Class': 'com.websystique.springboot.SpringBootRestApiApp'
@@ -96,7 +96,7 @@ jacocoTestReport {
              xml.enabled = true
              csv.enabled = true
        }
-}*/
+}
 sonarqube {
     properties {
         property "sonar.projectKey", "SpringBootRestApiExample"
@@ -119,7 +119,7 @@ sonarqube {
               property "sonar.jacoco.reportsPath", "build/reports/jacoco/test/html"
               //property "sonar.jacoco.reportsPath", "build/jacoco/test.exec"
     }
-}
+}*/
 
 
 configurations {
